@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Module 2</title>
+  <style>
+    :root{
+      --bg:#f7f7f9;
+      --card:#ffffff;
+      --accent:#0b74de;
+      --muted:#6b7280;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+    body{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg,#eef2ff 0%,var(--bg) 100%);
+      padding:24px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 8px 30px rgba(16,24,40,0.06);
+      max-width:720px;
+      width:100%;
+      padding:28px;
+    }
+    h1{margin:0 0 8px;font-size:1.5rem}
+    p{margin:0 0 16px;color:var(--muted)}
+    .controls{display:flex;gap:12px;flex-wrap:wrap}
+    button{
+      border:0;padding:10px 14px;border-radius:10px;
+      cursor:pointer;font-weight:600;
+      background:var(--accent);color:white;
+      box-shadow:0 6px 18px rgba(11,116,222,0.18);
+    }
+    footer{margin-top:18px;color:var(--muted);font-size:0.9rem}
+    @media (max-width:480px){
+      .card{padding:18px}
+      h1{font-size:1.25rem}
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <h1>Ostad Devops Batch 8 Assignment Module-2</h1>
+    <div class="controls">
+      <button id="countBtn">Click</button>
+    </div>
+
+    <footer id="info">You clicked 0 times.</footer>
+  </main>
+
+  <script>
+    const btn = document.getElementById('countBtn');
+    const info = document.getElementById('info');
+    let count = 0;
+    btn.addEventListener('click', () => {
+      count++;
+      info.textContent = `You clicked ${count} ${count === 1 ? 'time' : 'times'}.`;
+    });
+  </script>
+</body>
+</html>
